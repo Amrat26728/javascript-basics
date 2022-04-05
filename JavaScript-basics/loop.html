@@ -1,0 +1,58 @@
+<!-- what is a loop?
+     a loop is a programming construct that executes a piece of code as long as a certin condition is met.
+     types of loops:
+          entry controlled loops.
+               first condition is checked and then piece of code is executed.
+          exit controlled loops.
+               first code is excuted and then condition is checked means code must executed at leats once. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Loops</title>
+</head>
+<body>
+     
+</body>
+<script>
+     // for loop:
+     let i;
+     for(i = 0; i < 5; i++){
+          // console.log(i);
+          document.write(i);
+     }
+
+     // while loop:
+     let j = 5;
+     while(j<10){
+          document.write(j);
+          j++;
+     }
+
+     //do-while loop:
+     let k = 10;
+     do{
+          document.write(k);
+          k++;
+     }while(k<15)
+
+     // breaking out of a loop:
+     for (let l = 0; l < 10; l++){
+          if (l == 6){
+               break;
+          }
+          document.write(l);
+     }
+
+     // skipping a loop cycle:
+     for (let m = 0; m < 5; m++){
+          if (m == 3){
+               continue;
+          }
+          document.write(m);
+     }
+</script>
+</html>

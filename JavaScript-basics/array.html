@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Array in javascript</title>
+</head>
+<body>
+     <p id="demo"></p>
+</body>
+<script>
+     let cars = ["civic", "bmw", "alto", "mehran"];
+     document.getElementById("demo").innerHTML = cars;
+
+     // array operations
+     // access array element
+     let bmw = cars[1];
+     document.getElementById("demo").innerHTML = bmw;
+     //length of array
+     let len = cars.length;
+     document.getElementById("demo").innerHTML = len;
+     // access last element
+     let last_ele = cars[len - 1];
+     document.getElementById("demo").innerHTML = last_ele;
+     // accesing array elements using loop;
+     cars.forEach((item, index, array) => console.log(item, index))
+
+     // array methods
+     // toString() method: convert array into string.
+     document.getElementById("demo").innerHTML = cars.toString();
+     // pop() method: removes last element in the array.
+     let pop_last_ele = cars.pop();
+     document.getElementById("demo").innerHTML = pop_last_ele;
+     console.log(cars[cars.length - 1]);
+     // push() method: add element in the last.
+     cars.push("audi");
+     document.getElementById("demo").innerHTML = cars;
+     // shift() method: removes first element from the array (redusing the indices of every element by 1).
+     cars.shift();
+     document.getElementById("demo").innerHTML = cars
+     // unshift() method: add an element at the beginning of array (increases the indices of array by 1).
+     cars.unshift("honda");
+     document.getElementById("demo").innerHTML = cars;
+     // concat() method: merge two arrays.
+     let bikes = ["janan", "honda", "cd70", "125"];
+     document.getElementById("demo").innerHTML = cars.concat(bikes);
+     // sort() method: sort the array in ascending order.
+     document.getElementById("demo").innerHTML = bikes.sort();
+     // reverse() method: reverses the elements of an array.
+     document.getElementById("demo").innerHTML = bikes.reverse();
+
+     // map(), reduce() and filter() methods.
+     // map() method creates a new array from an existing one by performing a function on each array element and it does not change the original array.
+     let num1 = [1, 2, 3, 4, 5];
+     let num2 = num1.map(multiply);
+     function multiply(value){
+          return value * 2;
+     }
+     document.getElementById("demo").innerHTML = num2;
+     // filter() method takes each element from the array and applies a conditional statement against it. if condition becomes true then it returned on the concole.
+     let num3 = num1.filter(compare);
+     function compare(value){
+          return value >= 3;
+     }
+     document.getElementById("demo").innerHTML = num3;
+     // reduce() method reduces an array of values down to just one value using a function.
+     let num4 = num1.reduce(sum);
+     function sum(total, value){
+          return total + value;
+     }
+     document.getElementById("demo").innerHTML = num4;
+</script>
+</html>
