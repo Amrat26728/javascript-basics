@@ -1,0 +1,106 @@
+<!-- what is object?
+     javasript is OOP programming language, so everything in javascript is object.
+     A javascript object is like a real-world entity having state and behaviour.
+     e.g: car (state: color, model and behaviour: accelerating etc).
+     javascript is template based and we can create objects without the need of having a class. -->
+
+<!-- Object properties:
+     a javascript object is basically a collection of unordered properties.
+     values associated with a javascript object are called its peoperties.
+     properties can usually be accessd, added, updated and deleted excluding read only properties. -->
+
+<!-- object methods:
+     a javascript method is an action that can be performed on the objects. -->
+
+<!-- object accessors:
+     getters and setters allow defining of object accessors.
+     getter is used to get the value of the properties of an object.
+     setter is use to set the value of the properties of an object. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Objects</title>
+</head>
+<body>
+     <h1>JavaScript objects</h1>
+     <p id = "demo"></p>
+     <p id = "demo2"></p>
+     <!-- creating button for javascript method to perform an action on it -->
+     <button id = "click-me">Clikc me</button>
+</body>
+<script>
+
+     // Three ways of creating javascript objects.
+
+     // first way of creating object.
+     // use object literal to create and define a javascript object.
+     var student = {
+          name: "Amrat",
+          age: 22,
+          studies: "Software Engineering"
+     };
+     document.getElementById("demo").innerHTML = student.name + " of the age " + student.age + " studies " + student.studies;
+
+     // second way of creating object.
+     // use the keyword new to create an define a javascript object.
+     var student = new Object();
+     student.name = "Noman",
+     student.age = 21,
+     student.studies = "Software Engineering";
+     document.getElementById("demo").innerHTML = student.name + " of age " + student.age + " studies " + student.studies;
+
+     // third way to create object.
+     // use an object constructor to create and define a javascript object.
+     function student_data(name, age, studies){
+          this.name = name;
+          this.age = age;
+          this.studies = studies;
+     }
+     var student = new student_data("Airaf", 22, "Software Engineering");
+     document.getElementById("demo").innerHTML = student.name + " of age " + student.age + " studies " + student.studies;
+
+     // accessing properties:
+     var student_data = {
+          name: "Ibad",
+          age: 22,
+          studies: "Software Engineering"
+     };
+     // x = student_data.age;
+     y = "age";
+     // document.getElementById("demo").innerHTML = student_data.name + " of age " + student_data.age + " studies " + student_data.studies;
+     document.getElementById("demo").innerHTML = student_data.name + " of age " + student_data[y] + " studies " + student_data.studies;
+
+     // object methods:
+     let user = {
+          name: "Ali",
+          age: 22
+     };
+     function sayHi(){
+          alert("Hello!");
+     }
+     user.message = sayHi
+     document.getElementById("demo").innerHTML = "Hi " + user.name;
+     document.getElementById("click-me").onclick = user.message;
+
+     // object accessors:
+     var car = {
+          model: "320d",
+          color: "white",
+          fuel_type: "deisel",
+          car_name: "",
+          set name(name){
+               this.car_name = name;
+          },
+          get fuel(){
+               return this.fuel_type;
+          }
+     }
+     car.name = "civic";
+     document.getElementById("demo").innerHTML = car.car_name;
+     document.getElementById("demo2").innerHTML = car.fuel;
+</script>
+</html>
